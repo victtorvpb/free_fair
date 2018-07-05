@@ -37,11 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
-
     'django_logging',
-
-    'apps.core'
+    'apps.core',
 ]
 
 MIDDLEWARE = [
@@ -52,7 +49,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'django_logging.middleware.DjangoLoggingMiddleware'
+    'django_logging.middleware.DjangoLoggingMiddleware',
 ]
 
 
@@ -119,24 +116,17 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 
-REST_FRAMEWORK = {
-    'DEFAULT_RENDERER_CLASSES': (
-        'rest_framework.renderers.JSONRenderer',
-    )
-}
+REST_FRAMEWORK = {'DEFAULT_RENDERER_CLASSES': ('rest_framework.renderers.JSONRenderer',)}
 
 
 DJANGO_LOGGING = {
     'CONSOLE_LOG': False,
     'DISABLE_EXISTING_LOGGERS': False,
     'LOG_LEVEL': 'DEBUG',
-    'INDENT_CONSOLE_LOG': 2
+    'INDENT_CONSOLE_LOG': 2,
 }
 
 if not DEBUG:
-    
-    INSTALLED_APPS.append('raven.contrib.django.raven_compat')
-    RAVEN_CONFIG = {
-        'dsn': os.environ.get('SENTRY_URL')
 
-    }
+    INSTALLED_APPS.append('raven.contrib.django.raven_compat')
+    RAVEN_CONFIG = {'dsn': os.environ.get('SENTRY_URL')}
