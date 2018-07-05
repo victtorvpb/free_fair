@@ -10,4 +10,6 @@ install:
   - "make install-requirements-dev"
 
 script:
-  - "pipenv run pytest"
+  - "make test"
+  - "make pep8"
+  - "make coverage"

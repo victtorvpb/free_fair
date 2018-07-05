@@ -11,7 +11,12 @@ install-requirements-dev:
 clean:
 	pipenv --rm
 pep8:
-	pipenv run black . -S -v --py36 --exclude .venv -l 99 
 	pipenv run flake8 . 
 test:
-	pipenv run pytest
+	pipenv run py.test --cov=apps --cov-config .coveragerc
+formatter:
+	make flake8
+	pipenv run black . -S -v --py36 --exclude .venv -l 99 
+coverage:
+	coverage xml
+	python-codacy-coverage -r coverage.xml
