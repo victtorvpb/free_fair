@@ -9,12 +9,15 @@ djangorestframework = "*"
 djangorestframework-filters = "*"
 pytest-django = "*"
 django-logging-json = "*"
+raven = "*"
 
 [dev-packages]
 "flake8" = "*"
 "autopep8" = "*"
 ipython = "*"
 tox = "*"
+coverage = "*"
+codacy-coverage = "*"
 
 [requires]
 python_version = "3.6"

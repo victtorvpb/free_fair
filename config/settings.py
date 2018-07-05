@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '@31q6c)i-8rwd_=4e_h3qk!&f*3!sv9kxfa*q1#hhn%2^^2i4v'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
 
     'django_logging',
 
@@ -131,3 +132,11 @@ DJANGO_LOGGING = {
     'LOG_LEVEL': 'DEBUG',
     'INDENT_CONSOLE_LOG': 2
 }
+
+if not DEBUG:
+    
+    INSTALLED_APPS.append('raven.contrib.django.raven_compat')
+    RAVEN_CONFIG = {
+        'dsn': os.environ.get('SENTRY_URL')
+
+    }
