@@ -8,7 +8,7 @@ django = "*"
 djangorestframework = "*"
 djangorestframework-filters = "*"
 pytest-django = "*"
-
+django-logging-json = "*"
 
 [dev-packages]
 "flake8" = "*"
@@ -18,4 +18,3 @@ tox = "*"
 
 [requires]
 python_version = "3.6"
-

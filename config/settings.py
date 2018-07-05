@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '@31q6c)i-8rwd_=4e_h3qk!&f*3!sv9kxfa*q1#hhn%2^^2i4v'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'django_logging',
+
     'apps.core'
 ]
 
@@ -49,7 +51,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django_logging.middleware.DjangoLoggingMiddleware'
 ]
+
 
 ROOT_URLCONF = 'config.urls'
 
@@ -115,7 +119,15 @@ STATIC_URL = '/static/'
 
 
 REST_FRAMEWORK = {
-            'DEFAULT_RENDERER_CLASSES': (
-                'rest_framework.renderers.JSONRenderer',
-            )
-    }
+    'DEFAULT_RENDERER_CLASSES': (
+        'rest_framework.renderers.JSONRenderer',
+    )
+}
+
+
+DJANGO_LOGGING = {
+    'CONSOLE_LOG': False,
+    'DISABLE_EXISTING_LOGGERS': False,
+    'LOG_LEVEL': 'DEBUG',
+    'INDENT_CONSOLE_LOG': 2
+}
