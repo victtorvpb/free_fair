@@ -13,5 +13,4 @@ class TestsItsAliveView(TestCase):
     def test_page_its_alive_message(self):
         url = reverse('core:itsalive')
         response = self.client.get(url)
-        import pdb;pdb.set_trace()
         self.assertEqual(response.data, {"message": "It's Alive"})
