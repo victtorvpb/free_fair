@@ -10,4 +10,4 @@ install:
   - "make install install-requirements-dev"
 
 script:
-  - "pipenv run pytest
+  - "pipenv run pytest"
