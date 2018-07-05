@@ -4,6 +4,8 @@ install-requirements:
 	pipenv install
 
 make:
+	pipenv install
+install-requirements-dev:
 	pipenv install --dev
 	pipenv run pip install black
 clean:
