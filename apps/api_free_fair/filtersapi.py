@@ -11,4 +11,4 @@ class FreeFairModelsFilter(filters.FilterSet):
 
     class Meta:
         model = FreeFairModels
-        exclude = ( 'created', 'modified')
+        exclude = ('created', 'modified')
