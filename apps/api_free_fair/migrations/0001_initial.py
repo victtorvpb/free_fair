@@ -8,16 +8,30 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
             name='FreeFairModels',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('created', django_extensions.db.fields.CreationDateTimeField(auto_now_add=True, verbose_name='created')),
-                ('modified', django_extensions.db.fields.ModificationDateTimeField(auto_now=True, verbose_name='modified')),
+                (
+                    'id',
+                    models.AutoField(
+                        auto_created=True, primary_key=True, serialize=False, verbose_name='ID'
+                    ),
+                ),
+                (
+                    'created',
+                    django_extensions.db.fields.CreationDateTimeField(
+                        auto_now_add=True, verbose_name='created'
+                    ),
+                ),
+                (
+                    'modified',
+                    django_extensions.db.fields.ModificationDateTimeField(
+                        auto_now=True, verbose_name='modified'
+                    ),
+                ),
                 ('id_file', models.IntegerField(unique=True)),
                 ('longitude', models.BigIntegerField()),
                 ('latitude', models.BigIntegerField()),
@@ -41,5 +55,5 @@ class Migration(migrations.Migration):
                 'get_latest_by': 'modified',
                 'abstract': False,
             },
-        ),
+        )
     ]

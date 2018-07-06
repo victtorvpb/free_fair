@@ -39,10 +39,9 @@ INSTALLED_DEFAULT = [
     'django.contrib.staticfiles',
 ]
 
-INSTALLED_LIBS = ['django_logging', ]
+INSTALLED_LIBS = ['django_logging']
 
-INSTALLED_MY_APPS = ['apps.core',
-                  'apps.api_free_fair']
+INSTALLED_MY_APPS = ['apps.core', 'apps.api_free_fair']
 
 INSTALLED_APPS = INSTALLED_DEFAULT + INSTALLED_LIBS + INSTALLED_MY_APPS
 
