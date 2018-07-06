@@ -39,7 +39,7 @@ INSTALLED_DEFAULT = [
     'django.contrib.staticfiles',
 ]
 
-INSTALLED_LIBS = ['django_logging']
+INSTALLED_LIBS = ['django_logging', 'rest_framework']
 
 INSTALLED_MY_APPS = ['apps.core', 'apps.api_free_fair']
 
@@ -120,7 +120,12 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 
-REST_FRAMEWORK = {'DEFAULT_RENDERER_CLASSES': ('rest_framework.renderers.JSONRenderer',)}
+REST_FRAMEWORK = {
+    'DEFAULT_RENDERER_CLASSES': (
+        'rest_framework.renderers.JSONRenderer',
+        'rest_framework.renderers.BrowsableAPIRenderer',
+    )
+}
 
 
 DJANGO_LOGGING = {
