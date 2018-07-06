@@ -12,7 +12,7 @@ from apps.api_free_fair.models import FreeFairModels
 class TestsFreeFairApi(TestCase):
     def setUp(self):
         self.insert_free_fair = FreeFairModels.objects.create(
-            id_file=1,
+            id_file=3,
             longitude=-46550164,
             latitude=-23558733,
             setcens=355030885000091,
