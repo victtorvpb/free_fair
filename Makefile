@@ -8,6 +8,8 @@ make:
 install-requirements-dev:
 	pipenv install --dev
 	pipenv run pip install black
+install-requirements-test:
+	pipenv install --dev
 clean:
 	pipenv --rm
 pep8:
