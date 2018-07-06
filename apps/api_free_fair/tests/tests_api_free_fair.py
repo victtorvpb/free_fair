@@ -29,7 +29,7 @@ class TestsFreeFairApi(TestCase):
             reference_point='TV RUA PRETORIA',
         )
 
-    def test_ge_api_free_fair_to_name(self):
+    def test_get_api_free_fair_to_name(self):
         url = reverse('api_free_fair:FreeFair-list')
 
         query = urlencode({'name_fair': 'VILA FORMOSA'})
