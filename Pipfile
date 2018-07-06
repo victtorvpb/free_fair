@@ -12,6 +12,7 @@ django-logging-json = "*"
 raven = "*"
 django-extensions = "*"
 django-annoying = "*"
+pandas = "*"
 
 [dev-packages]
 "flake8" = "*"
@@ -21,4 +22,3 @@ tox = "*"
 coverage = "*"
 codacy-coverage = "*"
 pytest-cov = "*"
-
