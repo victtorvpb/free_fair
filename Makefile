@@ -18,4 +18,6 @@ formatter:
 	pipenv run black . -S -v --py36 --exclude .venv -l 99 
 	make pep8
 
-	
+coverage:
+	coverage xml	 
+	python-codacy-coverage -r coverage.xml
