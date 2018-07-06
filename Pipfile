@@ -13,6 +13,7 @@ raven = "*"
 django-extensions = "*"
 django-annoying = "*"
 pandas = "*"
+django-rest-swagger = "*"
 
 [dev-packages]
 "flake8" = "*"
