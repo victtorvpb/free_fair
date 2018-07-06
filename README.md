@@ -30,11 +30,13 @@ Access [http://localhost:8000/docs/](http://localhost:8000/docs/) to list docume
 ## Import CSV to database
 * run `python manage.py shell`
 * `from apps.core.scripts.import_csv_to_database import insert_csv_to_databse`
-* `insert_csv_to_databse('path_file')
+* `insert_csv_to_databse('path_file')`
 
 ## Execute test
 Execute tests and generate docs coverage in folder htmlcov
 * `make test `
+
+Acesse folder htmlcov to show coverage docs
 
 ## Check pep8 formatter test
 * `make pep8 `
