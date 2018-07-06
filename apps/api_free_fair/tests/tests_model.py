@@ -1,5 +1,6 @@
 from django.test import TestCase
 from apps.api_free_fair.models import FreeFairModels
+from annoying.functions import get_object_or_None
 
 
 class TestsFreeFairModel(TestCase):
@@ -34,3 +35,9 @@ class TestsFreeFairModel(TestCase):
         free_fair_insert = FreeFairModels.objects.get(id_file = 1)
 
         self.assertEqual(free_fair_insert.region_five, 'Oeste')
+    
+    def test_delete_free_fair(self):
+        self.insert_free_fair.delete()
+        delete_free_fair = get_object_or_None(FreeFairModels,id_file = 1 )
+
+        self.assertEqual(delete_free_fair, None)
