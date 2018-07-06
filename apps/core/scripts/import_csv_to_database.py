@@ -7,12 +7,8 @@ from apps.api_free_fair.models import FreeFairModels
 
 @transaction.atomic
 def insert_csv_to_databse(file_path='DEINFO_AB_FEIRASLIVRES_2014.csv'):
-    file_data_frame = pandas.read_csv(
-        file_path,
-        delimiter=',',
-        skiprows=0
-    )
-    import pdb;pdb.set_trace()
+    file_data_frame = pandas.read_csv(file_path, delimiter=',', skiprows=0)
+ 
     for index, row in file_data_frame.iterrows():
         print(row)
         FreeFairModels.objects.create(
@@ -34,4 +30,3 @@ def insert_csv_to_databse(file_path='DEINFO_AB_FEIRASLIVRES_2014.csv'):
             neighborhood=row.get('BAIRRO'),
             reference_point=row.get('REFERENCIA'),
         )
-
