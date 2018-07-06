@@ -3,6 +3,7 @@ from django.test import TestCase
 from django.urls import reverse
 from rest_framework import status
 from django.utils.http import urlencode
+from annoying.functions import get_object_or_None
 
 from apps.api_free_fair.serializers import FreeFairModelsSerializer
 from apps.api_free_fair.models import FreeFairModels
@@ -44,6 +45,26 @@ class TestsFreeFairApi(TestCase):
             region_eigth='Leste1',
             name_fair='VILA FORMOSA',
             register='4049-1',
+            address='RUA MARAGOJIPE',
+            number='S/N',
+            neighborhood='VL FORMOSA',
+            reference_point='TV RUA PRETORIA',
+        )
+
+        self.not_update_free_fair = FreeFairModels.objects.create(
+            id_file=89,
+            longitude=-46550164,
+            latitude=-23558733,
+            setcens=355030885000091,
+            areap=3550308005040,
+            coddist=87,
+            district='VILA FORMOSA',
+            codsubpref=26,
+            subpref='ARICANDUVA-FORMOSA-CARRAO',
+            region_five='Leste',
+            region_eigth='Leste1',
+            name_fair='VILA FORMOSA',
+            register='4089-1',
             address='RUA MARAGOJIPE',
             number='S/N',
             neighborhood='VL FORMOSA',
@@ -111,7 +132,27 @@ class TestsFreeFairApi(TestCase):
 
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
-        vehicle_model = FreeFairModels.objects.get(name_fair=data.get('name_fair'))
-        serializer = FreeFairModelsSerializer(vehicle_model)
+        free_fair = FreeFairModels.objects.get(name_fair=data.get('name_fair'))
+        serializer = FreeFairModelsSerializer(free_fair)
+
+        self.assertEqual(response.data, serializer.data)
+    
+    def test_update_api_free_fair_to_register(self):
+        url = reverse('api_free_fair:FreeFair-detail',
+                      kwargs={'pk': self.not_update_free_fair.pk})
+
+        data = {
+            'register': '4444-99',
+        }
+
+        new_data = json.dumps(data)
+
+        response = self.client.patch(
+            url, data=new_data, content_type='application/json')
+
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+
+        
+        serializer = FreeFairModelsSerializer(self.not_update_free_fair)
 
         self.assertEqual(response.data, serializer.data)
