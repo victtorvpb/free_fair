@@ -22,5 +22,3 @@ coverage = "*"
 codacy-coverage = "*"
 pytest-cov = "*"
 
-[requires]
-python_version = "3.6"
