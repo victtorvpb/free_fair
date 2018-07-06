@@ -30,16 +30,21 @@ ALLOWED_HOSTS = ['*']
 
 # Application definition
 
-INSTALLED_APPS = [
+INSTALLED_DEFAULT = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django_logging',
-    'apps.core',
 ]
+
+INSTALLED_LIBS = ['django_logging', ]
+
+INSTALLED_MY_APPS = ['apps.core',
+                  'apps.api_free_fair']
+
+INSTALLED_APPS = INSTALLED_DEFAULT + INSTALLED_LIBS + INSTALLED_MY_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
