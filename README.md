@@ -13,15 +13,21 @@
 * `pipenv --python 3.6` or `pipenv --python 3.5` 
 * `pipenv shell`
 * `make install-requirements-dev`
-
 * `python manage.py migrate`
 
 ## Execute project
+
+* Pre populate database `python manage.py loaddata dump.json` with data from the city hall
 
 * Run server `python manage.py runserver`
 
 * Access [http://localhost:8000/v1](http://localhost:8000/v1) to list urls api
 
+## Import CSV to database
+* run `python manage.py shell`
+* `from apps.core.scripts.import_csv_to_database import insert_csv_to_databse`
+* `insert_csv_to_databse('path_file')
+`
 
 ## Execute test
 Execute tests and generate docs coverage in folder htmlcov
