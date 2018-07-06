@@ -10,6 +10,7 @@ djangorestframework-filters = "*"
 pytest-django = "*"
 django-logging-json = "*"
 raven = "*"
+django-extensions = "*"
 
 [dev-packages]
 "flake8" = "*"
