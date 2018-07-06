@@ -26,3 +26,11 @@ class TestsFreeFairModel(TestCase):
     def test_insert_free_fair(self):
         free_fair_get = FreeFairModels.objects.get(id_file = 1)
         self.assertEqual(self.insert_free_fair,free_fair_get )
+    
+    def test_edit_region_five_free_fair(self):
+        self.insert_free_fair.region_five = 'Oeste'
+        self.insert_free_fair.save()
+
+        free_fair_insert = FreeFairModels.objects.get(id_file = 1)
+
+        self.assertEqual(free_fair_insert.region_five, 'Oeste')
