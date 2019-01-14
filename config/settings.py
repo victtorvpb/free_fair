@@ -127,7 +127,7 @@ STATIC_URL = "/static/"
 
 
 REST_FRAMEWORK = {
-    "DEFAULT_FILTER_BACKENDS": ("rest_framework_filters.backends.DjangoFilterBackend",)
+    "DEFAULT_FILTER_BACKENDS": ("rest_framework_filters.backends.RestFrameworkFilterBackend",)
 }
 
 
