@@ -1,10 +1,9 @@
 install:
 	$(info ************  Not command ************)
 install-requirements:
-	pipenv install
+	pipenv sync
 install-requirements-dev:
-	pipenv install --dev
-	pipenv run pip install black
+	pipenv sync --dev
 install-requirements-test:
 	pipenv install --dev
 clean:
