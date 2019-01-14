@@ -4,7 +4,7 @@ name = "pypi"
 verify_ssl = true
 
 [packages]
-django = "*"
+django = "==2.0.8"
 djangorestframework = "*"
 djangorestframework-filters = "*"
 pytest-django = "*"
@@ -14,6 +14,7 @@ django-extensions = "*"
 django-annoying = "*"
 pandas = "*"
 django-rest-swagger = "*"
+requests = ">=2.20.0"
 
 [dev-packages]
 "flake8" = "*"
