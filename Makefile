@@ -5,7 +5,7 @@ install-requirements:
 install-requirements-dev:
 	pipenv sync --dev
 install-requirements-test:
-	pipenv install --dev
+	pipenv sync --dev
 clean:
 	pipenv --rm
 pep8:
