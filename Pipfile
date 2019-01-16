@@ -4,7 +4,7 @@ name = "pypi"
 verify_ssl = true
 
 [packages]
-django = ">=2.0.10"
+django = "==2.0.10"
 djangorestframework = "*"
 djangorestframework-filters = "*"
 pytest-django = "*"
